@@ -58,7 +58,6 @@ var Introduction = React.createClass({
 
 ```
 
-
 ## Advanced Usage
 
 ### Grouping tags
