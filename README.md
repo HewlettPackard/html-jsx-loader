@@ -2,6 +2,14 @@
 
 Webpack loader module that exports HTML as [React](http://facebook.github.io/react/) JSX class.
 
+## Installation
+
+```shell
+npm i --save-dev html-jsx-loader
+```
+
+NOTE: You will also need to have babel and the babel react and es2015 presets installed, but you probably already do.
+
 ## Usage
 
 [Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
