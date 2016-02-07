@@ -118,7 +118,7 @@ var TagToReactRouter = function() {
 
     beginNode: function(node) {
 
-      var tagName = this.routerLink ? 'Link' : node.tagName.toLowerCase();
+      var tagName = this.routerLink ? 'r08s6tgzo3' : node.tagName;
       var attributes = [];
       for (var i = 0, count = node.attributes.length; i < count; i++) {
         var value = node.attributes[i].value;
@@ -153,7 +153,7 @@ var TagToReactRouter = function() {
     begin: function(node) {
       switch (node.nodeType) {
         case 1:
-          if (node.tagName === 'A' && node.getAttribute('data-to')) {
+          if (node.tagName === 'LINK') {
             this.routerLink = true;
           }
           this.beginNode(node);
@@ -167,7 +167,7 @@ var TagToReactRouter = function() {
 
     end: function(node) {
       if (node.nodeType === 1) {
-        var tagName = this.routerLink ? 'Link' : node.tagName.toLowerCase();
+        var tagName = this.routerLink ? 'r08s6tgzo3' : node.tagName.toLowerCase();
         this.routerLink = false;
         if (node.firstChild) {
           this.output += '</' + tagName + '>';
@@ -203,6 +203,7 @@ function createReactComponent(content) {
 function getGroupedElements(content) {
   var wrapperEl = createElement('div');
   wrapperEl.innerHTML = content;
+	wrapperEl.className = 'page'
   var elements = wrapperEl.getElementsByTagName('*');
 
   var groupedElements = {};
@@ -235,10 +236,18 @@ function replaceVariables(content, query) {
   return newContent;
 
 }
+var classname
 
 module.exports = function(content) {
 
   var query = loaderUtils.parseQuery(this.query);
+
+	if (query.classname) {
+		classname = query.classname
+		delete query.classname
+	} else {
+		classname = ''
+	}
 
   content = replaceVariables(content, query);
 
@@ -268,8 +277,8 @@ module.exports = function(content) {
 
     output = tmp;
   } else {
-    output = createReactComponent(content) + ';';
+    output = createReactComponent(content)+ ';';
   }
-
-  return 'module.exports = ' + output;
+	output = output.replace(/r08s6tgzo3/g,'Link') 
+  return 'import React from "react"\nimport {Link} from "react-router"\nmodule.exports = ' + output;
 };
