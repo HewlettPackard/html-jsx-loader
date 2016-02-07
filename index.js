@@ -203,7 +203,7 @@ function createReactComponent(content) {
 function getGroupedElements(content) {
   var wrapperEl = createElement('div');
   wrapperEl.innerHTML = content;
-	wrapperEl.className = classname
+	wrapperEl.className = 'page'
   var elements = wrapperEl.getElementsByTagName('*');
 
   var groupedElements = {};
@@ -279,7 +279,6 @@ module.exports = function(content) {
   } else {
     output = createReactComponent(content)+ ';';
   }
-	console.log(output)
 	output = output.replace(/r08s6tgzo3/g,'Link') 
   return 'import React from "react"\nimport {Link} from "react-router"\nmodule.exports = ' + output;
 };
