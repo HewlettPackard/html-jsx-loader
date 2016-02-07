@@ -2,6 +2,14 @@
 
 Webpack loader module that exports HTML as [React](http://facebook.github.io/react/) JSX class.
 
+## Installation
+
+```shell
+npm i --save-dev html-jsx-loader
+```
+
+NOTE: You will also need to have babel and the babel react and es2015 presets installed, but you probably already do.
+
 ## Usage
 
 [Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
@@ -15,7 +23,7 @@ Add the **html-jsx-loader** to your Webpack configuration:
 	...
 	module: {
 		loaders: [
-			{ test: /\.htm$/, loader: 'jsx-loader!imports?React=react!html-jsx-loader'}
+			{ test: /\.htm$/, loader: 'babel?presets[]=react,presets[]=es2015!html-jsx-loader'}
 		]},
 		resolve: {
 			extensions: ['', '.js', '.htm']
@@ -33,6 +41,29 @@ Finally, you can reference this component in your JavaScript code as follows:
 	var Introduction = require('./Introduction'); 
 
 	//Introduction is not HTML but ReactJS class.
+```
+
+So, if you have an Introduction.html file like this:
+
+```html
+<h1>Hello</h1>
+<p>This is a greeting</p>
+```
+
+It is equivalent to saying
+
+```javascript
+var Introduction = React.createClass({
+	render() {
+		return (
+			<div>
+				<h1>Hello</h1>
+				<p>This is a greeting</p>
+			</div>
+		)
+	}
+})
+
 ```
 
 ## Advanced Usage
@@ -84,7 +115,7 @@ If you would like the **html-jsx-loader** to parse **a** tags to React Router **
 	...
 	module: {
 		loaders: [
-			{ test: /\.htm$/, loader: 'jsx-loader!imports?React=react,Router=react-router,Link=>Router.Link!html-jsx-loader'}
+			{ test: /\.htm$/, loader: 'babel!html-jsx-loader'}
 		]},
 		resolve: {
 			extensions: ['', '.js', '.htm']
@@ -113,7 +144,7 @@ If you would like the **html-jsx-loader** to replace a custom variable inside yo
   ...
   module: {
     loaders: [
-      { test: /\.htm$/, loader: 'jsx-loader!imports?React=react!html-jsx-loader?__LOCATION__=server'}
+      { test: /\.htm$/, loader: 'babelhtml-jsx-loader?__LOCATION__=server'}
     ]},
     resolve: {
       extensions: ['', '.js', '.htm']

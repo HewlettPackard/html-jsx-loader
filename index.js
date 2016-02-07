@@ -82,7 +82,6 @@ var TagToReactRouter = function() {
 
       var wrapper = createElement('div');
       wrapper.innerHTML = element;
-			wrapper.className = 'page'
 
       if (this.oneLevelOnly(wrapper)) {
         this.traverse(wrapper);
@@ -238,6 +237,7 @@ function replaceVariables(content, query) {
 
 }
 var classname
+
 module.exports = function(content) {
 
   var query = loaderUtils.parseQuery(this.query);
@@ -279,7 +279,7 @@ module.exports = function(content) {
   } else {
     output = createReactComponent(content)+ ';';
   }
-	output = output.replace(/r08s6tgzo3/g,'Link') 
 	console.log(output)
+	output = output.replace(/r08s6tgzo3/g,'Link') 
   return 'import React from "react"\nimport {Link} from "react-router"\nmodule.exports = ' + output;
 };
