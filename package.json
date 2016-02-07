@@ -1,0 +1,77 @@
+{
+  "_args": [
+    [
+      "html-jsx-loader",
+      "/home/zane/3ashworth"
+    ]
+  ],
+  "_from": "html-jsx-loader@*",
+  "_id": "html-jsx-loader@0.1.17",
+  "_inCache": true,
+  "_location": "/html-jsx-loader",
+  "_nodeVersion": "0.12.0",
+  "_npmUser": {
+    "email": "alansouzati@gmail.com",
+    "name": "alansouzati"
+  },
+  "_npmVersion": "2.7.5",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "html-jsx-loader",
+    "raw": "html-jsx-loader",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/html-jsx-loader/-/html-jsx-loader-0.1.17.tgz",
+  "_shasum": "56a86bb56b65e9ffa747a8da336d7ef2191bcbe2",
+  "_shrinkwrap": null,
+  "_spec": "html-jsx-loader",
+  "_where": "/home/zane/3ashworth",
+  "authors": [
+    "Alan Souza",
+    "Bryan Jacquot",
+    "Eric Soderberg"
+  ],
+  "bugs": {
+    "url": "https://github.com/HewlettPackard/html-jsx-loader/issues"
+  },
+  "dependencies": {
+    "htmltojsx": "^0.2.2",
+    "jsdom-no-contextify": "~3.1.0",
+    "loader-utils": "^0.2.6"
+  },
+  "description": "html loader module to convert HTML to JSX for webpack",
+  "devDependencies": {
+    "mocha": "1.17.x",
+    "should": "3.1.x"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "56a86bb56b65e9ffa747a8da336d7ef2191bcbe2",
+    "tarball": "http://registry.npmjs.org/html-jsx-loader/-/html-jsx-loader-0.1.17.tgz"
+  },
+  "gitHead": "17d5758be4ef877c61a7ae32953341ea7c7c3123",
+  "homepage": "https://github.com/HewlettPackard/html-jsx-loader",
+  "installable": true,
+  "maintainers": [
+    {
+      "name": "alansouzati",
+      "email": "alansouzati@gmail.com"
+    }
+  ],
+  "name": "html-jsx-loader",
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HewlettPackard/html-jsx-loader.git"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "version": "0.1.17"
+}
